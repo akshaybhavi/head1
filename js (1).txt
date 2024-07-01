@@ -1,0 +1,138 @@
+// script.js
+
+// Use strict mode for better error detection and optimizations
+'use strict';
+
+// Wait for the DOM to be fully loaded before running scripts
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav-links a, .cta-button');
+    navLinks.forEach(link => {
+        link.addEventListener('click', smoothScroll);
+    });
+
+    function smoothScroll(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust for fixed header
+                behavior: 'smooth'
+            });
+            // Update URL without page jump
+            history.pushState(null, null, targetId);
+        }
+    }
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinksContainer.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    navLinksContainer.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            menuToggle.classList.remove('active');
+            navLinksContainer.classList.remove('active');
+        }
+    });
+
+    // Intersection Observer for fade-in animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observerOptions = {
+        root: null,
+        threshold: 0.2, // Trigger when 20% of the element is visible
+        rootMargin: '0px 0px -100px 0px' // Trigger slightly before element is in view
+    };
+
+    const fadeObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Stop observing once faded in
+            }
+        });
+    }, observerOptions);
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+
+    // Form Validation and Submission
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', handleFormSubmit);
+    });
+
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        // Basic validation
+        let isValid = true;
+        form.querySelectorAll('[required]').forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add('invalid');
+            } else {
+                field.classList.remove('invalid');
+            }
+        });
+
+        if (isValid) {
+            // In a real-world scenario, you'd send this to your server
+            console.log("Form data:", Object.fromEntries(formData));
+            form.reset();
+            alert("Thank you! We'll get back to you soon.");
+        } else {
+            alert("Please fill in all required fields.");
+        }
+    }
+
+    // Responsive Navbar (changes on scroll)
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('main-nav');
+    const scrollThreshold = 100; // Adjust based on your design
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            // Scrolling down and past threshold
+            navbar.classList.add('nav-hidden');
+        } else {
+            // Scrolling up or at the top
+            navbar.classList.remove('nav-hidden');
+        }
+
+        if (scrollTop > 50) {
+            navbar.classList.add('nav-solid');
+        } else {
+            navbar.classList.remove('nav-solid');
+        }
+
+        lastScrollTop = scrollTop;
+    }, { passive: true }); // Improves scroll performance
+
+    // Testimonial Slider (simple version, consider a library for more features)
+    const testimonials = document.querySelectorAll('.testimonial');
+    let currentTestimonial = 0;
+
+    function showTestimonial(n) {
+        testimonials.forEach(t => t.style.display = 'none');
+        testimonials[n].style.display = 'block';
+    }
+
+    function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+    }
+
+    showTestimonial(currentTestimonial);
+    setInterval(nextTestimonial, 5000); // Change testimonial every 5 seconds
+});

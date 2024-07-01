@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPro Solutions - Your Trusted IT Consultancy Partner</title>
+    <meta name="description" content="TechPro Solutions offers expert IT consulting services to drive your business forward with innovative technology solutions.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- You can add Google Fonts or Font Awesome links here -->
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="#home">
+                        <img src="logo.png" alt="TechPro Solutions Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Empowering Business Growth Through Smart IT Solutions</h1>
+                <p>At TechPro Solutions, we blend innovative technology with industry expertise to optimize your operations, enhance security, and drive digital transformation.</p>
+                <div class="cta-buttons">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get a Free Consultation</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero-image.jpg" alt="IT Consultancy Services">
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Expertise</h2>
+                <p class="section-subtitle">Tailored IT Solutions for Every Business Need</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="icon-cybersecurity.png" alt="Cybersecurity Icon">
+                        <h3>Cybersecurity</h3>
+                        <p>Protect your data and infrastructure with our advanced security solutions.</p>
+                        <a href="#" class="btn btn-text">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="icon-cloud.png" alt="Cloud Migration Icon">
+                        <h3>Cloud Migration</h3>
+                        <p>Seamlessly transition to the cloud for improved scalability and efficiency.</p>
+                        <a href="#" class="btn btn-text">Learn More</a>
+                    </div>
+                    <!-- More service cards... -->
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section bg-light">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About TechPro Solutions</h2>
+                        <p>With over a decade of experience, our team of certified IT professionals has helped businesses of all sizes harness the power of technology.</p>
+                        <ul class="about-points">
+                            <li>✓ 10+ Years of Industry Experience</li>
+                            <li>✓ Certified Experts (AWS, Microsoft, Cisco)</li>
+                            <li>✓ 24/7 Support</li>
+                            <li>✓ 98% Client Satisfaction Rate</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Meet Our Team</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="team-photo.jpg" alt="TechPro Solutions Team">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Success Stories</h2>
+                <p class="section-subtitle">Real-world Impact for Our Clients</p>
+                <div class="portfolio-grid">
+                    <article class="portfolio-item">
+                        <img src="case-study-1.jpg" alt="Case Study: FinTech Revolution">
+                        <div class="portfolio-content">
+                            <h3>FinTech Revolution</h3>
+                            <p>How we helped a leading bank secure its digital transformation.</p>
+                            <a href="#" class="btn btn-secondary">Read Case Study</a>
+                        </div>
+                    </article>
+                    <!-- More portfolio items... -->
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section bg-dark text-light">
+            <div class="container">
+                <h2 class="section-title">Client Testimonials</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <blockquote>
+                            "TechPro's cloud migration strategy saved us 40% in IT costs while improving our system's reliability."
+                        </blockquote>
+                        <cite>- Sarah Thompson, CTO at GrowFast Startups</cite>
+                    </div>
+                    <!-- More testimonials... -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Let's Talk Tech</h2>
+                <p class="section-subtitle">Ready to transform your IT? Contact us for a free consultation.</p>
+                <div class="contact-flex">
+                    <div class="contact-form">
+                        <form id="consultationForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Tell us about your IT needs</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><strong>Email:</strong> <a href="mailto:info@techprosolutions.com">info@techprosolutions.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+18005551234">(800) 555-1234</a></p>
+                        <p><strong>Address:</strong> 123 Tech Avenue, Suite 500, San Francisco, CA 94105</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><img src="icon-linkedin.png" alt="LinkedIn"></a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><img src="icon-twitter.png" alt="Twitter"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo-white.png" alt="TechPro Solutions Logo">
+                    <p>Innovative IT solutions for tomorrow's challenges.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Whitepapers</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for the latest in tech and IT consulting.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechPro Solutions. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
